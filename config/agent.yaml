@@ -1,0 +1,19 @@
+# Agent Manifest - AgentRegistry static entry point (Cat 3 autonomous).
+# Root-level keys only; `class` is a single dotted import path.
+# Runtime-tunable parameters live in config/config.yaml, not here.
+
+id: RET-C3-008
+name: Retail Autonomous Store Energy Anomaly Detection & Cost Reduction Agent
+namespace: ret
+version: 0.1.0
+enabled: true
+description: Autonomous store energy anomaly detection against a per-store baseline with approval-gated HVAC writes
+class: src.graph.graph.Graph
+category: Cat 3
+industry: RET
+base_type: ReActAgent
+generation_mode: llm
+required_trust_level: INTERNAL
+requires:
+  secrets: []
+  extras: []

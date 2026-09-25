@@ -1,0 +1,18 @@
+# Runtime parameters loaded by AgentRegistry and passed as Graph(config=...).
+# Static manifest fields (name/version/class/requires) live in agent.yaml.
+
+max_retry: 3
+timeout_s: 60
+
+# Autonomous loop (Cat 3): iteration ceiling and hard cost ceiling per invocation (USD).
+max_iterations: 12
+budget_usd: 0.10
+
+# HITL: checkpointer + confirmation policy for the approval-gated equipment write.
+memory_enabled: true
+hitl:
+  enabled: true
+  max_hitl: 8
+  default_tool_policy: "allow"
+  tool_policies:
+    hvac_setpoint_write: "confirm"   # human approval required before any HVAC setpoint write
